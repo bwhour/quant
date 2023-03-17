@@ -1,0 +1,16 @@
+telegram:
+  api_key: "API_KEY" # API key for your Telegram bot
+  chat_id: 123456789 # Your Telegram chat ID (including any "-" sign)
+  verbose: false # Use verbose messaging to Telegram
+binance:
+  api_key: "API_KEY" # Binance API key
+  secret_key: "SECRET_KEY" # Binance secret key
+dca_bot:
+  order_id_regex: "^.*_deal_.*$" # Pattern to identify a 3Commas client_order_id in Binance
+  dca_volume_scale: 1.05 # Safety Order Volume Scale in 3Commas. Used to predetermine how much quote asset will be required for future orders. Should be set to highest value used across all your 3Commas bots
+  quote_coverage: 0.5 # Percentage expressed as a decimal (range 0-1). Determines the minimum coverage for quote assets in spot wallet. Eg. For 5 bots running on USDT, if all upcoming orders will require 100 USDT, then bot will automatically redeem from savings when available spot USDT dips below 50 USDT
+  rebalance_time: # UTC time each day to rebalance funds between spot and savings. Binance cut off window is 23:50 UTC each day. Recommended to rebalance just before that
+    hour: 23
+    minute: 40
+  dry_run: false # Dry-run mode does the exact same as live mode, except it will stop short of actually rebalancing funds between spot and savings
+  excluded_symbols: [AVAXUSDT, SOLUSDT] # When all safety orders have been filled on an asset, we want to avoid calculating future orders when calculating amount to move to savings (because the calculated upcoming orders will never happen in these cases). This allows us to continue savings for "active" pairs. You need to manually add and remove from this list as symbols move to max safety order and active, but this task will be very infrequent.
