@@ -4,11 +4,13 @@ Create your strategy for the [Backtrader](https://www.backtrader.com), do the ba
 
 Installation
 ============
-pip install git+https://github.com/bwhour/quant.git@main
+- python>3.8
+- pip install git+https://github.com/bwhour/quant.git@main
+
 Usage
 =====
 
-See examples folder
+See test folder
 
 Thanks
 ======
