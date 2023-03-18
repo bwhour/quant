@@ -2,7 +2,7 @@ import datetime as dt
 
 import backtrader as bt
 
-from backtrader_binance import BinanceStore
+from bt_binance import BinanceStore
 
 
 class RSIStrategy(bt.Strategy):

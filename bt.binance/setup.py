@@ -14,11 +14,11 @@ setup(
     long_description=LONG_DESCRIPTION,
     long_description_content_type='text/markdown',
     url='https://github.com/bwhour/quant/bt.binance',
-    author='willbewhour',
+    author='willbwhour',
     author_email='juvemeen.xio@gmail.com',
     license='MIT',
-    packages=['bt.binance'],
-    python_requires='>=3.7',
+    packages=['bt_binance'],
+    python_requires='>=3.8',
     keywords='backtrader,binance,bitcoin,bot,crypto,trading',
     install_requires=REQUIREMENTS
 )
